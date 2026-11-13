@@ -1,8 +1,9 @@
-export type RegistrationErrorCode = "INVALID_INPUT" | "EMAIL_TAKEN";
+export type RegistrationErrorCode = "INVALID_INPUT" | "EMAIL_TAKEN" | "USERNAME_TAKEN";
 
 export const REGISTRATION_MESSAGES: Record<RegistrationErrorCode, string> = {
   INVALID_INPUT: "Please check the highlighted fields",
   EMAIL_TAKEN: "Email already registered",
+  USERNAME_TAKEN: "Username already taken",
 };
 
 export type FieldErrors = Record<string, string[]>;
