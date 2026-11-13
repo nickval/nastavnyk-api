@@ -16,8 +16,10 @@ export const userRepository = {
     return users.find((u) => u.email === email);
   },
 
+  // Порівняння без урахування регістру; username зберігається як його ввели.
   findByUsername(username: string): User | undefined {
-    return users.find((u) => u.username === username);
+    const needle = username.toLowerCase();
+    return users.find((u) => u.username.toLowerCase() === needle);
   },
 
   create(data: Omit<User, "id">): User {
